@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+	<dic>
+		<table>DicArea</table>
+		<code>areaCode</code>
+		<value>areaName</value>
+		<superCode>lev</superCode>
+	</dic>
+	<dic>
+		<table>DicTransaction</table>
+		<code>code</code>
+		<value>value</value>
+		<superCode></superCode>
+	</dic>
+	<dic>
+		<table>SysDic</table>
+		<code>dicCode</code>
+		<value>dicValue</value>
+		<superCode></superCode>
+	</dic>
+	<dic>
+		<table>DicTradingStyle</table>
+		<code>code</code>
+		<value>value</value>
+		<superCode></superCode>
+	</dic>
+	<dic>
+		<table>DicInvestmentPeriod</table>
+		<code>code</code>
+		<value>value</value>
+	</dic>
+	<dic>
+		<table>DicLendingCycle</table>
+		<code>code</code>
+		<value>value</value>
+	</dic>
+		<dic>
+		<table>DicIntentionType</table>
+		<code>intentionTypeCode</code>
+		<value>intentionTypeName</value>
+	</dic>
+</dictionary>

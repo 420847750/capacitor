@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<WINFARM_SCADA_SYSCFG >
+<!-- 风机操作节点-->
+<dtd deviceName="FJ01,FJ02,FJ03,FJ04,FJ05,FJ06,FJ07,FJ08,FJ09,FJ10,FJ11,FJ12,FJ13,FJ14,FJ15,FJ16,FJ17,FJ18,FJ19,FJ20,FJ21,FJ22,FJ23,FJ24,FJ25,FJ26,FJ27,FJ28,FJ29,FJ30,FJ31,FJ32,FJ33,FJ34,FJ35,FJ36,FJ37,FJ38,FJ39,FJ40,FJ41,FJ42,FJ43,FJ44,FJ45,FJ46,FJ47,FJ48,FJ49,FJ50,FJ51,FJ52,FJ53,FJ54,FJ55,FJ56,FJ57,FJ58,FJ59,FJ60,FJ61,FJ62,FJ63,FJ64,FJ65,FJ66">
+<!-- 电容测试控制信号 -->
+	<node name="启动" type="1" file_no="1" busAddr="2" busPoints="1" busType="BOOL" english_name="VISU_DI_CONTROL_START_SIGNAL" />
+	<node name="停机" type="1" file_no="1" busAddr="3" busPoints="1" busType="BOOL" english_name="VISU_DI_CONTROL_STOP_SIGNAL" />
+	<node name="禁止启动" type="1" file_no="1" busAddr="5" busPoints="1" busType="BOOL" english_name="INIT_MAIN_LOOP_BLOCK_STARTING_MODE" />
+	<node name="开始自检" type="1" file_no="1" busAddr="6" busPoints="1" busType="BOOL" english_name="B_ManualBatteryTest" />
+	
+	<node name="待机" type="1" file_no="2" busAddr="142" busPoints="1" busType="BOOL" english_name="MAIN_STANDSTILL" />
+	<node name="总故障" type="1" file_no="2" busAddr="227" busPoints="1" busType="BOOL" english_name="ERROR_ERROR_GLOBAL" />
+	<node name="变桨安全链故障" type="1" file_no="2" busAddr="601" busPoints="1" busType="BOOL" english_name="SAFETY_SYSTEM_ERROR_ERROR_SAFETY_SYSTEM_PITCH_SYSTEM_EM_STOP_FROM_PITCH" />
+	<node name="外部停机信号" type="1" file_no="2" busAddr="7" busPoints="1" busType="BOOL" english_name="control_signal_external_stop_demand" />
+	
+	<node name="60s平均风速" type="1" file_no="4" busAddr="147" busPoints="1" busType="BOOL"  english_name="AVERAGE_WIND_SPEED_60S" />
+	<node name="轴1桨叶角度" type="0" file_no="4" busAddr="267" busPoints="1" busType="BOOL"  english_name="PITCH_POSITION_1" />
+	<node name="轴2桨叶角度" type="0" file_no="4" busAddr="269" busPoints="2" busType="BOOL"  english_name="PITCH_POSITION_2" />
+	<node name="轴3桨叶角度" type="0" file_no="4" busAddr="271" busPoints="3" busType="BOOL"  english_name="PITCH_POSITION_3" />
+	<node name="轴1变桨速度" type="0" file_no="4" busAddr="520" busPoints="4" busType="BOOL"  english_name="PITCH_SPEED_1" />
+	<node name="轴2变桨速度" type="0" file_no="4" busAddr="522" busPoints="5" busType="BOOL"  english_name="PITCH_SPEED_2" />
+	<node name="轴3变桨速度" type="0" file_no="4" busAddr="524" busPoints="6" busType="BOOL"  english_name="PITCH_SPEED_3" />
+	<node name="轴1电容电压" type="0" file_no="4" busAddr="365" busPoints="7" busType="BOOL" english_name="PITCH_ATECH_CAPACITOR_VOLTAGE_1" />
+	<node name="轴2电容电压" type="0" file_no="4" busAddr="367" busPoints="8" busType="BOOL" english_name="PITCH_ATECH_CAPACITOR_VOLTAGE_2" />
+	<node name="轴3电容电压" type="0" file_no="4" busAddr="369" busPoints="9" busType="BOOL" english_name="PITCH_ATECH_CAPACITOR_VOLTAGE_3" />
+	<node name="轴1电容温度" type="0" file_no="4" busAddr="359" busPoints="10" busType="BOOL" english_name="PITCH_ATECH_CAPACITOR_TEMP_1" />
+	<node name="轴2电容温度" type="0" file_no="4" busAddr="361" busPoints="11" busType="BOOL" english_name="PITCH_ATECH_CAPACITOR_TEMP_2" />
+	<node name="轴3电容温度" type="0" file_no="4" busAddr="363" busPoints="12" busType="BOOL" english_name="PITCH_ATECH_CAPACITOR_TEMP_3" />
+</dtd>
+</WINFARM_SCADA_SYSCFG>
+

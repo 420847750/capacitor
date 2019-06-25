@@ -1,0 +1,39 @@
+/*��½����*/
+html{width:100%;height:100%;}
+body{margin:0;width:100%;height:100%;}
+.wnLogin{width:100%;height:100%;min-width:1200px;background:url(../img/bg.jpg);background-attachment:inherit;/* 指定background-attachment的设置应该从父元素继承 */background-size:cover;}
+.wnLogin img{float:left;}
+.wnLogin form{height:auto;}
+.wnLogin .loginBox h2{text-align:center;margin:5px;color:#193084;}
+.wnLogin .loginBox{width:500px;position:absolute;left:50%;margin-left:-250px;top:30%;}
+.wnLogin .loginBox .boxRight{font-family:"微软雅黑";float:left;width:500px;height:350px;background:url(../img/bg2.jpg) no-repeat;background-size:cover;box-shadow:5px 5px 15px #000;}
+.wnLogin .loginBox .boxRight .boxMain{width:330px;margin-left:90px;}
+.wnLogin .loginBox .boxRight .boxMain .wnUser{height:40px;line-height:40px;}
+.wnLogin .loginBox .boxRight .boxMain .wnUser p{font-size:20px;color:#ff8000;margin:5px;}
+.wnLogin .loginBox .boxRight .boxMain .wnUser span{font-size:16px;color:#ff8000;margin-left:10px;}
+.wnLogin .loginBox .boxRight .boxMain .wnText{margin-top:10px;margin-left:10px;overflow:hidden;min-height:65px;}
+.wnLogin .loginBox .boxRight .boxMain .wnText input[type="text"]{width:240px;padding-left:40px;height:40px;border:1px solid #afc3ce;border-radius:5px;}
+.wnLogin .loginBox .boxRight .boxMain .wnText input[type="checkbox"]{vertical-align:middle;width:20px;height:20px;border:1px solid #afc3ce;border-radius:5px;}
+.zidong{color:#999999;font-size:12px;}
+.wnLogin .loginBox .boxRight .boxMain .wnText input[type="password"]{width:240px;padding-left:40px;bottom:0;height:40px;border:1px solid #afc3ce;border-radius:5px;color:#000000;}
+.wnLogin .loginBox .boxRight .boxMain .wnText input.user{line-height:40px;background:url(../img/wnlogin3.png) no-repeat 10px center;background-color:#ecf5fa;}
+.wnLogin .loginBox .boxRight .boxMain .wnText input.pwd{line-height:40px;background:url(../img/wnlogin4.png) no-repeat 15px center;background-color:#ecf5fa;}
+.wnLogin .loginBox .boxRight .boxMain .wnText a.forget{float:left;color:#337ab7;}
+.wnLogin .loginBox .boxRight .boxMain .wnText a.user{float:right;color:#337ab7;margin-right:30px;}
+.wnLogin .loginBox .boxRight .boxMain .wnText a.login{display:block;width:282px;height:40px;line-height:40px;text-align:center;color:#fff;font-size:18px;background-color:#ff9000;border-radius:5px;text-decoration:none;letter-spacing:15px;}
+.wnLogin .loginBottom{width:100%;height:90px;line-height:90px;background-color:#303440;}
+.wnLogin .loginBottom ul{height:90px;text-align:center;overflow:hidden;margin:0px auto;}
+.wnLogin .loginBottom li{float:left;margin-right:40px;font-size:14px;color:#fff;}
+.wnLogin .loginBottom li.wnlast{margin:0px;}
+.wnLogin .name{font-size:36px;color:#fff;font-family:"微软雅黑";position:absolute;top:83px;left:50%;margin-left:-174px;}
+.wnLogin .loginBox .boxRight .boxMain .wnText p{margin:3px 10px;font-size:14px;color:#FA3C3C;background:url(../images/error-lg.png) no-repeat left center;padding-left:20px;margin-top: 15px;}
+.wnLogin .loginBox .boxRight .boxMain .wnText input.code{background-color:#ecf5fa;padding-left:15px;width:140px;vertical-align:middle;}
+.wnLogin .loginBox .boxRight .boxMain .wnText img{vertical-align:middle;margin-left:5px;}
+.wnLogin .loginBox .boxRight .boxMain .wnText span{margin-left:5px;font-size:13px;}
+.wnLogin .loginBox .boxRight .boxMain .wnText span a{color:#FA3C3C}
+.wnLogin .loginBox .boxRight .boxMain .wnText.line{height:30px;margin-bottom:20px;}
+.wnLogin .loginBox .boxRight .boxMain .wnText.btn{height:40px;}
+.wnLogin .loginBox .boxRight .boxMain .wnText.btn span{color:#fff;position:absolute;bottom:5px;right:10px;}
+
+.wnfooter2{position:absolute;bottom:0;width:100%;background:none;color:white;padding:5px 0;}
+.wnfooter2 span{padding-left:150px;}

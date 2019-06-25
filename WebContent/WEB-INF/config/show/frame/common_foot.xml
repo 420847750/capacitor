@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webpage>
+	<code>common_foot</code>
+	<url>/frame/common_foot</url><!--公用头部-->
+	<datasets>
+		<dataset>
+			<name></name>
+			<type></type>
+			<scope></scope>
+			<pageSize></pageSize>
+			<sql><![CDATA[]]></sql>
+		</dataset>
+	</datasets>
+</webpage>

@@ -1,0 +1,348 @@
+.demo {
+    /* for IE10+ touch devices */
+    touch-action:none;
+}
+
+.w {
+    padding: 16px;
+    position: absolute;
+    width:150px;
+    z-index: 4;
+    border: 1px solid #2e6f9a;
+    box-shadow: 2px 2px 19px #e0e0e0;
+    -o-box-shadow: 2px 2px 19px #e0e0e0;
+    -webkit-box-shadow: 2px 2px 19px #e0e0e0;
+    -moz-box-shadow: 2px 2px 19px #e0e0e0;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    cursor: move;
+    background-color: white;
+    font-size: 11px;
+    -webkit-transition: background-color 0.25s ease-in;
+    -moz-transition: background-color 0.25s ease-in;
+    transition: background-color 0.25s ease-in;
+}
+
+.w:hover {
+    background-color: #5c96bc;
+    color: white;
+
+}
+
+.aLabel {
+    -webkit-transition: background-color 0.25s ease-in;
+    -moz-transition: background-color 0.25s ease-in;
+    transition: background-color 0.25s ease-in;
+}
+
+.aLabel._jsPlumb_hover, ._jsPlumb_source_hover, ._jsPlumb_target_hover {
+    background-color: #1e8151;
+    color: white;
+}
+
+.aLabel {
+    background-color: white;
+    opacity: 0.8;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    border: 1px solid #346789;
+    cursor: pointer;
+}
+
+.ep {
+    position: absolute;
+    bottom: 37%;
+    right: 5px;
+    width: 1em;
+    height: 1em;
+    background-color: orange;
+    cursor: pointer;
+    box-shadow: 0 0 2px black;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+    -moz-transition: -moz-box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in;
+}
+
+.ep:hover {
+    box-shadow: 0px 0px 6px black;
+}
+.bi{
+	/*position: absolute;
+    top:1%;
+    right: 95px;
+    width: 1em;
+    height: 1em;
+    background-color: red;
+    cursor: pointer;*/
+    box-shadow: 0 0 2px black;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+    -moz-transition: -moz-box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in;
+	
+}
+
+.ad{
+	/*position: absolute;
+    top:1%;
+    right: 75px;
+    width: 1em;
+    height: 1em;
+    background-color: green;
+    cursor: pointer;*/
+    box-shadow: 0 0 2px black;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+    -moz-transition: -moz-box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in;
+	
+}
+.pd{
+	/*position: absolute;
+    top:1%;
+    right: 75px;
+    width: 1em;
+    height: 1em;
+    background-color: blue;
+    cursor: pointer;*/
+    box-shadow: 0 0 2px black;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+    -moz-transition: -moz-box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in;
+	
+}
+.bd{
+	/*position: absolute;
+    top:1%;
+    right: 55px;
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    cursor: pointer;*/
+    box-shadow: 0 0 2px black;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+    -moz-transition: -moz-box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in;
+	
+}
+.ld{
+	/*position: absolute;
+    top:1%;
+    right: 35px;
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    cursor: pointer;*/
+    box-shadow: 0 0 2px black;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+    -moz-transition: -moz-box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in;
+	
+}
+.lde{
+	/*position: absolute;
+    top:1%;
+    right: 15px;
+    width: 1em;
+    height: 1em;
+    background-color: yellow;
+    cursor: pointer;*/
+    box-shadow: 0 0 2px black;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+    -moz-transition: -moz-box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in;
+	
+}
+.de{
+	/*position: absolute;
+    top:1%;
+    right: 15px;
+    width: 1em;
+    height: 1em;
+    background-color: yellow;
+    cursor: pointer;*/
+    box-shadow: 0 0 2px black;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+    -moz-transition: -moz-box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in;
+	
+}
+.sd:hover {
+   /* box-shadow: 0px 0px 6px black;*/
+}
+
+
+
+
+
+.statemachine-demo ._jsPlumb_endpoint {
+    z-index: 3;
+}
+
+#opened {
+    left: 10em;
+    top: 5em;
+}
+
+#phone1 {
+    left: 35em;
+    top: 12em;
+    width: 7em;
+}
+
+#inperson {
+    left: 12em;
+    top: 23em;
+}
+
+#phone2 {
+    left: 28em;
+    top: 24em;
+}
+
+#rejected {
+    left: 10em;
+    top: 35em;
+}
+
+.dragHover {
+    border: 2px solid orange;
+}
+
+path, ._jsPlumb_endpoint { cursor:pointer; }
+
+.startflowstate{
+	width: 60px;
+    height: 60px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+
+.operatebuttongroup{
+	background:#000000;
+	position: absolute;
+	top: 1px;
+	right: 45px;
+}
+.operatebuttongroup .menu_opener
+{
+	display: none;
+}
+
+.operatebuttongroup .menu_opener_label
+{
+
+	width: 20px;
+	height: 20px;
+	display: block;
+	cursor: pointer;
+	z-index: 10;
+	position: absolute;
+
+}
+
+.operatebuttongroup .menu_opener_label i
+{
+	font-size:20px;
+	top:-5px;
+	position: absolute;
+	color: #000000;
+
+}
+
+.operatebuttongroup .link_general{
+	
+	filter:alpha(opacity=0);  
+    -moz-opacity:0.0;  
+    -khtml-opacity: 0.0;  
+    opacity: 0.0;  
+	width: 0px;
+	height: 0px;
+	display: block;
+	border-radius: 50%;
+	position: absolute;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	
+}
+.operatebuttongroup .menu_opener:checked ~ .link_one
+{
+	
+	filter:alpha(opacity=100);  
+    -moz-opacity:1.0;  
+    -khtml-opacity: 1.0;  
+    opacity: 1.0;  
+	width: 20px;
+	height: 20px;
+	top: -25px;
+	left: -20px;
+	color: #000000;
+	text-align:center;
+}
+.operatebuttongroup .menu_opener:checked ~ .link_two
+{
+	filter:alpha(opacity=100);  
+    -moz-opacity:1.0;  
+    -khtml-opacity: 1.0;  
+    opacity: 1.0;  
+	width: 20px;
+	height: 20px;
+	top: -40px;
+	left: 5px;
+	color: #000000;
+	text-align:center;
+}
+.operatebuttongroup .menu_opener:checked ~ .link_three
+{
+	filter:alpha(opacity=100);  
+    -moz-opacity:1.0;  
+    -khtml-opacity: 1.0;  
+    opacity: 1.0;  
+	width: 20px;
+	height: 20px;
+	top: -25px;
+	left:25px;
+	color: #000000;
+	text-align:center;
+}
+.operatebuttongroup .menu_opener:checked ~ .link_four
+{
+	filter:alpha(opacity=100);  
+    -moz-opacity:1.0;  
+    -khtml-opacity: 1.0;  
+    opacity: 1.0;  
+	width: 20px;
+	height: 20px;
+	top: 0px;
+	left:35px;
+	color: #000000;
+	text-align:center;
+}
+.operatebuttongroup .menu_opener:checked ~ .link_five
+{
+	filter:alpha(opacity=100);  
+    -moz-opacity:1.0;  
+    -khtml-opacity: 1.0;  
+    opacity: 1.0;  
+	width: 20px;
+	height: 20px;
+	top: 20px;
+	left:20px;
+	color: #000000;
+	text-align:center;
+}
+.operatebuttongroup .menu_opener:checked ~ .link_six
+{
+	filter:alpha(opacity=100);  
+    -moz-opacity:1.0;  
+    -khtml-opacity: 1.0;  
+    opacity: 1.0;  
+	width: 20px;
+	height: 20px;
+	top: 30px;
+	left: 0px;
+	color: #000000;
+	text-align:center;
+}

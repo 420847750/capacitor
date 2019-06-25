@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+	   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd"
+	default-lazy-init="true">
+
+    <context:property-placeholder location="WEB-INF/config/database.properties" ignore-resource-not-found="true" ignore-unresolvable="true" />
+
+	<context:component-scan base-package="cn.fulong">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+	</context:component-scan>
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="initialPoolSize" value="${pool.initialPoolSize}" />
+		<property name="minPoolSize" value="${pool.minPoolSize}" />
+		<property name="maxPoolSize" value="${pool.maxPoolSize}" />
+		<property name="maxIdleTime" value="${pool.maxIdleTime}" />
+		<property name="acquireIncrement" value="${pool.acquireIncrement}" />
+		<!--<property name="checkoutTimeout" value="${pool.checkoutTimeout}" />-->
+		<property name="maxIdleTimeExcessConnections" value="${pool.maxIdleTimeExcessConnections}" />
+		<property name="testConnectionOnCheckin" value="${pool.testConnectionOnCheckin}" />
+		<property name="idleConnectionTestPeriod" value="${pool.idleConnectionTestPeriod}" />
+	</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	 
+	<bean id="databaseNamingStrategy" class="org.hibernate.cfg.DatabaseNamingStrategy">
+		<property name="tablePrefix" value="${namingStrategy.tablePrefix}" />
+		<property name="isAddUnderscores" value="${namingStrategy.isAddUnderscores}" />
+		<property name="maxLength" value="${namingStrategy.maxLength}" />
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan">
+			<list>
+				<value>cn.fulong.frame.entity</value>
+				<value>cn.fulong.tra.entity</value>
+			</list>
+		</property>
+		<property name="namingStrategy" ref="databaseNamingStrategy" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.current_session_context_class">${hibernate.current_session_context_class}
+				</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.cache.use_second_level_cache">${hibernate.cache.use_second_level_cache}
+				</prop>
+				<prop key="hibernate.cache.provider_class">${hibernate.cache.provider_class}
+				</prop>
+				<prop key="hibernate.cache.use_query_cache">${hibernate.cache.use_query_cache}
+				</prop>
+				<prop key="hibernate.jdbc.fetch_size">${hibernate.jdbc.fetch_size}
+				</prop>
+				<prop key="hibernate.jdbc.batch_size">${hibernate.jdbc.batch_size}
+				</prop>
+			</props>
+		</property>
+	</bean>
+   <!-- 连接池配置 -->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <!-- 最大连接数 -->
+        <property name="maxTotal" value="30"/>
+        <!-- 最大空闲连接数 -->
+        <property name="maxIdle" value="10"/>
+        <!-- 每次释放连接的最大数目 -->
+        <property name="numTestsPerEvictionRun" value="1024"/>
+        <!-- 释放连接的扫描间隔（毫秒） -->
+        <property name="timeBetweenEvictionRunsMillis" value="30000"/>
+        <!-- 连接最小空闲时间 -->
+        <property name="minEvictableIdleTimeMillis" value="1800000"/>
+        <!-- 连接空闲多久后释放, 当空闲时间>该值 且 空闲连接>最大空闲连接数 时直接释放 -->
+        <property name="softMinEvictableIdleTimeMillis" value="10000"/>
+        <!-- 获取连接时的最大等待毫秒数,小于零:阻塞不确定的时间,默认-1 -->
+        <property name="maxWaitMillis" value="1500"/>
+        <!-- 在获取连接的时候检查有效性, 默认false -->
+        <property name="testOnBorrow" value="true"/>
+        <!-- 在空闲时检查有效性, 默认false -->
+        <property name="testWhileIdle" value="true"/>
+        <!-- 连接耗尽时是否阻塞, false报异常,ture阻塞直到超时, 默认true -->
+        <property name="blockWhenExhausted" value="false"/>
+    </bean>
+    <!--jedis 客户端单机版 -->
+    <bean id="redisClient" class="redis.clients.jedis.JedisPool">
+    	<constructor-arg index="0" ref="jedisPoolConfig"/>
+		<constructor-arg index="1" value="192.168.0.99" type="java.lang.String"/>
+		<constructor-arg index="2" value="6379" type="int"/>
+		<constructor-arg index="3" value="20000" type="int"/>
+		<constructor-arg index="4" value="123456" type="java.lang.String"/>
+	</bean>
+
+	<!-- 开启AOP监听 只对当前配置文件有效 -->
+	<aop:aspectj-autoproxy expose-proxy="true" />
+	<!-- 事务管理器 -->
+	<bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 申明annotation 加载事务驱动 -->
+	<tx:annotation-driven transaction-manager="txManager" />
+
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="create*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="merge*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
+			<tx:method name="put*" propagation="REQUIRED" />
+			<tx:method name="use*" propagation="REQUIRED" />
+			<tx:method name="get*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="count*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="find*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="list*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config expose-proxy="true">
+		<aop:pointcut id="txPointcut2" expression="execution(public * cn.fulong.common.transaction.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut2" />
+	</aop:config>
+	
+	<aop:config expose-proxy="true">
+		<aop:pointcut id="txPointcutApp" expression="execution(public * cn.fulong.wp.transaction.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcutApp" />
+	</aop:config>
+	
+	<bean id="freeMarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPaths" value="${template.loader_path}" />
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="defaultEncoding">${template.encoding}</prop>
+				<prop key="url_escaping_charset">${url_escaping_charset}</prop>
+				<prop key="locale">${locale}</prop>
+				<prop key="tag_syntax">auto_detect</prop>
+				<prop key="whitespace_stripping">true</prop>
+				<prop key="classic_compatible">true</prop>
+				<prop key="number_format">${template.number_format}</prop>
+				<prop key="boolean_format">${template.boolean_format}</prop>
+				<prop key="datetime_format">${template.datetime_format}</prop>
+				<prop key="date_format">${template.date_format}</prop>
+				<prop key="time_format">${template.time_format}</prop>
+				<prop key="object_wrapper">freemarker.ext.beans.BeansWrapper</prop>
+			</props>
+		</property>
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="base" value="#{servletContext.contextPath}" />
+				<entry key="locale" value="${locale}" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="cacheSeconds" value="${message.cache_seconds}" />
+		<property name="useCodeAsDefaultMessage" value="true" />
+		<property name="basenames">
+			<list>
+				<value>${message.common_path}</value>
+			</list>
+		</property>
+		 <property name="fileEncodings" value="utf-8"/> 
+	</bean>
+
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.FixedLocaleResolver">
+		<property name="defaultLocale" value="${locale}" />
+	</bean>
+</beans>

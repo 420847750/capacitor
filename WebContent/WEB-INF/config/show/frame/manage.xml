@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webpage>
+	<code>manage</code>
+	<url>/frame/manage</url><!--公用头部-->
+	<datasets>
+		<dataset>
+			<name>ds1</name>
+			<type>1</type>
+			<scope>3</scope>
+			<pageSize>15</pageSize>
+			<pageNoArg>pageNo</pageNoArg>
+			<sql>
+			<![CDATA[
+			     select * from test_result  where 1=1 ${1} ${2} ${3} order by test_time desc
+			     			]]>
+			</sql>
+			<sqlparts>
+				<sqlpart>
+					<part>${1}</part>
+					<type>1</type>
+					<arg>deviceName</arg>
+					<defaultValue></defaultValue>
+					<options>
+						<option>
+							<code>null</code>
+							<value></value>
+						</option>
+						<option>
+							<code>not null</code>
+							<value>and fan_name = ?</value>
+						</option>
+					</options>
+				</sqlpart>
+				<sqlpart>
+					<part>${2}</part>
+					<type>1</type>
+					<arg>start</arg>
+					<options>
+						<option>
+							<code>null</code>
+							<value></value>
+						</option>
+						<option>
+							<code>not null</code>
+							<value>and test_time &gt;= ?</value>
+						</option>
+					</options>
+				</sqlpart>
+				<sqlpart>
+					<part>${3}</part>
+					<type>1</type>
+					<arg>end</arg>
+					<options>
+						<option>
+							<code>null</code>
+							<value></value>
+						</option>
+						<option>
+							<code>not null</code>
+							<value>and test_time &lt;= ?</value>
+						</option>
+					</options>
+				</sqlpart>
+			</sqlparts>
+			<vars>
+				<var>
+					<argName>deviceName</argName>
+					<type>1</type>
+					<prefix></prefix>
+					<suffix></suffix>
+				</var>
+				<var>
+					<argName>start</argName>
+					<type>1</type>
+					<prefix></prefix>
+					<suffix></suffix>
+				</var>
+				<var>
+					<argName>end</argName>
+					<type>1</type>
+					<prefix></prefix>
+					<suffix></suffix>
+				</var>
+			</vars>
+		</dataset>
+		<dataset>
+			<name>ds2</name>
+			<type>1</type>
+			<scope>4</scope>
+			<sql>
+			<![CDATA[
+			     select * from scada_node order by  order_no
+			     			]]>
+			</sql>
+		</dataset>
+	</datasets>
+</webpage>

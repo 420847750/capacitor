@@ -1,0 +1,243 @@
+@charset "utf-8";
+html,body{width:100%;height:100%;}
+body{/*background: linear-gradient(to bottom right, red , blue); background-color:#408080; */background-image:url(../images/main.jpg);background-repeat:no-repeat;overflow:auto;background-size:cover;}
+/* CSS Document */
+/*设置公用的属性*/
+header,.header2,nav,.nav2,section,.footer{margin:0px;position:absolute;padding:0px;left:0px;/* border:1px solid #666; */}
+/*整体布局尺寸位置*/
+header	{height:65px;width:100%;min-width:1200px;top:0px;}
+.header2{height:30px;width:100%;min-width:1500px;top:65px;overflow:hidden;}
+nav		{height:auto;width:10%;top:100px;bottom:35px;}
+.nav2	{height:30px;width:90%;min-width:1105px;left:10%;min-left:85px;top:100px;}
+section	{height:auto;width:90%;min-width:1105px;top:135px;bottom:35px;left:10%;}
+.footer	{width:100%; min-width:1200px;bottom:0px;}
+
+/*1顶部*/
+header{/* background-color:#123456; */color:white;overflow:hidden;}
+header h1{color:#99f0ff;text-shadow:#000 4px 4px 3px;width:650px;position:absolute;padding-left:5%;/* margin-left:-325px; */margin-top:10px;}
+header img{float:left;}
+/**右上角,用户信息以及修改密码等**/
+.g_headRight{float:right;font-family: "瀵邦喛钂嬮梿鍛寸拨";font-size: 15px;color: #fff;}
+.g_headRightpic2{display: inline-block;height:18px;width: 16px;background: url(../images/d.png) center no-repeat;vertical-align: middle;	}
+.g_headRightloginout{display: inline-block;height: 25px;width: 86px;text-align: center;line-height: 25px;background-color:#fff;vertical-align: middle;border:1px solid #04577f;border-radius: 3px;color:black;}
+
+/*2风场总信息*/
+.header2{overflow:hidden;/* background-color:#B4CDE6; */overflow: hidden;
+    color: #ffffff;line-height:30px;
+    background: linear-gradient(#08407d, #3c5573);
+    border-bottom: solid 1px #629898;
+    border-top: solid 1px #629898;}
+.header2 input{margin:auto 5px;color:#00ff00;background:#10456B;border:none;padding:3px;font-size:16px;}
+.header2 input:nth-of-type(1){width:80px;}
+.header2 input:nth-of-type(2){width:40px;}
+.header2 input:nth-of-type(3){width:40px;}
+.header2 input:nth-of-type(4){width:100px;}
+.header2 input:nth-of-type(5){width:100px;}
+.header2 input:nth-of-type(6){width:100px;}
+.header2 input:nth-of-type(7){width:100px;}
+/*3左侧风机列表*/
+nav{padding:1px 0px;color:white;display:inline-block;vertical-align:center;overflow-y:scroll;min-width:100px;}
+/* #memenu{color:#fff;} */
+#form1{text-align:center;}
+#form1>a{font-size:18px;color:white;text-decoration-line:none;font-weight:bold;overflow:hidden;}
+#memenu a{border:solid 0.5px white;border-radius:4px;text-decoration : none;width:95%;display:inline-block;text-align:center;font-weight:bold;}
+
+a.status_bingwang{background-color:#0000ff;color:white;}
+a.status_daiji{background-color:#00ff00;color:white;}
+a.status_weihu{background-color:#ffff00;color:black;}
+a.status_guzhang{background-color:#ff0000;color:white;}
+a.status_qidong{background-color:#00ffff;color:black;}
+a.status_yunxing{background-color:#0080c0;color:black;}
+a.status_tingji{background-color:#ff8040;color:black;}
+a.status_chushihua{background-color:#800080;color:white;}
+a.status_weitongxun{background-color:#caa688;color:white;}
+/*4主页面导航位置控制*/
+.nav2{color:#ff8000;line-height:30px;font-size:20px;}
+.nav2 input{background:#063771;font-weight:bold;color:#ffffff;font-size:18px;width:170px;border:none;padding:5px;}
+.nav_menu3,
+.nav_menu3 ul,
+.nav_menu3 ul li,
+.nav_menu3 ul li a,
+.nav_menu3 #menu-button {margin: 0;padding: 0;border: 0;list-style: none;line-height: 20px; display: block;}
+.nav_menu3 #menu-button {margin-top: 100px;background: #F00;position: absolute;z-index: 99999;}
+.nav_menu3:after,
+.nav_menu3 > ul:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+.nav_menu3 #menu-button {display: none;}
+.nav_menu3 {position:relative;z-index:999;width: 100%;line-height: 1;background: #ffffff;background: 	#303030 ;}
+#menu-line {position: absolute;top: 0;left: 0;height: 3px; background: #282828 ;-webkit-transition: all 0.25s ease-out;-moz-transition: all 0.25s ease-out;-ms-transition: all 0.25s ease-out;-o-transition: all 0.25s ease-out;transition: all 0.25s ease-out;}
+.nav_menu3 > ul > li {float: left;}
+.nav_menu3.align-center > ul {font-size: 0;text-align: center;}
+.nav_menu3.align-center > ul > li {display: inline-block;float: none;}
+.nav_menu3.align-center ul ul {text-align: left;}
+.nav_menu3.align-right > ul > li {float: right;}
+.nav_menu3.align-right ul ul {text-align: right;}
+.nav_menu3 > ul > li > a {padding: 7px 10px 7px 10px;text-decoration: none;text-transform: uppercase;color: #eee;-webkit-transition: color .2s ease;-moz-transition: color .2s ease;-ms-transition: color .2s ease;-o-transition: color .2s ease;transition: color .2s ease;border-right:1px solid #282828 ;}
+.nav_menu3 > ul > li:hover > a {color: #282828 ;background: #FFF;}
+.nav_menu3 > ul > li.nav-has-sub > a {padding-right: 15px;}
+.nav_menu3 ul ul {position: absolute;left: -9999px;}
+.nav_menu3 > ul > li > ul {border-top: 1px solid #FFF;}
+.nav_menu3 li:hover > ul {left: auto;}
+.nav_menu3.align-right li:hover >ul {right: 0;}
+.nav_menu3 ul ul ul {margin-left: 100%;top: 0;}
+.nav_menu3.align-right ul ul ul {margin-left: 0;margin-right: 100%;}
+.nav_menu3 ul ul li {height: 0;-webkit-transition: height .2s ease;-moz-transition: height .2s ease;-ms-transition: height .2s ease;-o-transition: height .2s ease;transition: height .2s ease;}
+.nav_menu3 ul li:hover > ul > li {height: auto;}
+.nav_menu3 ul ul li a {padding: 10px 10px;width:100px;background: #282828 ;text-decoration: none;color: #eeeeee;-webkit-transition: color .2s ease;-moz-transition: color .2s ease;-ms-transition: color .2s ease;-o-transition: color .2s ease;transition: color .2s ease;border-top: 1px solid #282828 ;}
+.nav_menu3 ul ul li:hover > a,
+.nav_menu3 ul ul li a:hover {color: #282828 ;background: #FFF;border-top: 1px solid #FFF;}
+
+
+/*5主页面盒子*/
+section{padding:1px 0;overflow-x:hidden;overflow-y:scroll;}
+section select{width:100%;height:100%;}
+/*6页脚*/
+.footer{padding:5px 0px;background-color:#123456;color:white;}
+.footer>input{width:60px;font-size:16px;color:black;font-weight:bold;text-align:center;border:none;}
+.footer input:nth-of-type(1){background-color:#caa688;}
+.footer input:nth-of-type(2){background-color:#0000ff;color:white;}
+.footer input:nth-of-type(3){background-color:#ffff00;}
+.footer input:nth-of-type(4){background-color:#ff0000;color:white;}
+.footer input:nth-of-type(5){background-color:#00ffff;color:black;}
+.footer input:nth-of-type(6){background-color:#00ff00;color:white;}
+.footer input:nth-of-type(7){background-color:#ff8040;}
+.footer input:nth-of-type(8){background-color:#0080c0;color:white;}
+
+/*控制列表样式*/
+table.control{border-collapse: collapse;margin: 0 auto;text-align: center;float:left;}
+table.control td,th{border: 1px solid #cad9ea;color:#666;width:5%;}
+table.control thead th {background: #3c8f99;}
+table.control tr:nth-child(odd){background: #eee;}
+table.control tr:nth-child(even){background: #e5eAeA;}
+table.control>thead>tr>th>button{width:100%;height:100%;}
+/*地理总览*/
+section .div1{background-color:rgb(0,0,0,0.8);height:auto;width:auto;float:left;border:1px solid #000;border-radius:5px;margin:2px 2px 2px 2px;}
+section .div1 img{width:80%;height:80%;}
+section .div1 .div2{float:left;}
+section .div1 .div3{float:left;font-size:12px;color:white}
+section .div1 .div3 input{width:40px;height:12px;background:none;color:red;font-weight:blod;border:none;border-bottom:1px solid white;}
+/*表格样式*/
+table{border-collapse: collapse;margin: 0 auto;text-align: center;}
+table td, table th{border: 1px solid #cad9ea;color: #666;}
+/* table thead th{background-color: #CCE8EB;}
+table tr:nth-child(odd){background: #fff;}
+table tr:nth-child(even){background: #F5FAFA;} */
+/* 启停机查询 */
+.run_stop_chaxun{background:#fff;}
+/* 操作员日志 */
+.logs{background:#fff;}
+/*启停机查询、操作员日志、*/
+.baojingchaxun{background:#fff;}
+.baojingchaxun_head{width:100%;overflow:hidden;line-height:30px;padding-left:15px;}
+.baojingchaxun_head form{float:left;}
+.baojingchaxun_head form select{width:150px;height:22px;}
+.baojingchaxun_head button{height:30px;width:90px;background-color:#c0c0c0;color:black;font-size:15px;}
+.baojingchaxun_body{width:100%;height:85%;padding:5px;}
+
+/*最近100条报警*/
+.alarm_100{border-collapse: collapse;margin: 0 auto;text-align: center; width:99%;float:left;}
+.alarm_100 th,td{border: 1px solid #cad9ea;height:15px;}
+.alarm_100 thead th {background-color: #CCE8EB;}
+.alarm_100 tbody{font-size:14px;}
+.alarm_100 tr:nth-child(odd){background: #fff;}
+.alarm_100 tr:nth-child(even){background: #F5FAFA;}
+.alarm_100 th:nth-of-type(1){min-width:150px;}
+.alarm_100 th:nth-of-type(2){min-width:100px;}
+.alarm_100 th:nth-of-type(3){width:30%;}
+.alarm_100 th:nth-of-type(4){width:20%;}
+.alarm_100 th:nth-of-type(5){width:10%;}
+/* 页码样式 */
+.page{background:#71b401;font-weight:bold;color:#000;}
+.before,.next,.otherpage{background:#373737;}
+.input{background:#373737;color:#fff;}
+ul.pageSpite{background:none;color:#000;padding-left:150px;}
+ul.pageSpite input{width:50px;text-align:center;}
+ul.pageSpite li {display: inline;}
+ul.pageSpite a.sure{background-color:#c0c0c0;padding:2px 30px;border-radius:5px;text-decoration:none;color:#000;}
+ul.pageSpite li a{font-size:10px;color: #fff;float: left;padding: 2px 12px;margin:0 5px;text-decoration: none;border:solid 1px #808080;}
+ul.pageSpite li a.active{background-color: #373737;color: white;}
+ul.pageSpite li a:hover:not(.active) {background-color: red;}
+/*批量操作*/
+#wait {display: none;z-index:9999;position: fixed;width:100%;height:100%;background-color: rgba(0,0,0,0.5);border:solid 2px black;} 
+#background {display: none;position: fixed;width:600px;height:300px;background-color: rgba(0,0,0,0.5);border:solid 2px black;} 
+#close {background-color:#0080c0;color:white;height:10%;}
+#close-button {float: right;cursor: pointer;padding-right: 15px;font-size:25px;}
+#close h3{padding:2px;}
+#div_fengji {background:#eeeeee;margin: auto;height: 60%;padding:10px;}
+#foot1 {padding: 5px 0;text-align: center;background: #0080c0;color: white;height:8%;}
+#foot1>button{height:25px;width:80px;font-size:12px;border-radius:5px;padding:0;font-weight:bold;color:black;}
+
+/*单机信息界面导航栏样式*/	
+.aui-nav-content-box {width: 100%;position: relative;}
+.aui-nav-list-box {float:right;zoom: 1; border-bottom: none;z-index: 110;/* background:#00343f; */width: 100%;display: block;}
+.aui-nav-list-box ul{ list-style-type: none;margin:0px;}
+.aui-nav-list-box ul li a { color: #c0c0c0;cursor: pointer;text-decoration:none;font-family:"微软雅黑";}
+.aui-nav-list-box ul li {/* background:#005f8c; */float: left;color: #000;height: 30px;line-height: 30px;cursor: pointer;width: 80px;text-align: center;font-size: 16px;border: groove 4px #054ba0;}
+.aui-nav-list-box ul .aui-current { color: #fff;background: #082c56;border-bottom: solid 2px #f54144;font-weight: bold;}
+.aui-nav-list-box ul .aui-current a {color: #fff;font-size:18px;}
+.aui-nav-list-item {display: none;}
+.aui-nav-list-item feildset{overflow:hidden;}
+/* 两端对齐 */
+.aui-nav-list-item span{display:inline-block;width:110px;height:20px;margin:2px 5px;;vertical-align:bottom;/* text-align: justify; */color:white;font-size:16px;font-family:"微软雅黑";}
+.aui-nav-list-item input{display:inline-block;width:100px;padding:2px;margin-right:5px;border: none;outline: none;-webkit-appearance: none;background-color:#10456B;color:#A5FB31;font-weight:bold;font-size: 16px;}
+.aui-nav-list-item span i{display:inline-block;width:100%;}
+
+/*单机信息-基本信息界面*/
+fieldset{/* background:rgb(0,0,0,0.3); */border:solid 2px #408080;}
+legend{font-weight:bold;line-height:20px;padding:0 5px;color:#ff8040;font-family:"幼圆";}	
+
+#jibenxinxi{width:500px;height:200px;float:left;}
+#dianwangxinxi{width:500px;height:200px;}
+#dianwangxinxi input{width:60px;}
+#yunxingcanshu{width:300px;height:200px;float:left;}
+#wenduxinxi{width:268px;height:200px;float:left;}
+#wenduxinxi input{width:60px;}
+#bianjiangxinxi{width:400px;height:200px;float:left;}
+/*单机信息-发电机界面*/
+#zhuangtaixinxi_fadianji{width:30%;height:300px;float:left;line-height:25px;}
+#shuzhixinxi_fadianji{width:60%;height:300px;float:left;}	
+/*单机信息-齿轮箱界面*/
+#zhuangtaixinxi_chilunxiang{width:30%;height:300px;float:left;line-height:25px;}
+#shuzhixinxi_chilunxiang{width:60%;height:300px;float:left;}	
+#zhuangtaixinxi_chilunxiang span{text-align:justify;display:inline-block;width:160px;}
+#shuzhixinxi_chilunxiang span{text-align:justify;display:inline-block;width:170px;}
+/*单机信息-变桨界面*/
+#yepian{width:30%;float:left;line-height:25px;}
+#yepian input{width:100px;}
+#yepian span{width:170px;}
+/*单机信息-偏航界面*/
+#zhuangtaixinxi_yaw{width:30%;height:380px;float:left;line-height:25px;}
+#shuzhixinxi_yaw{width:60%;height:380px;float:left;}
+/*单机信息-液压界面*/
+#zhuangtaixinxi_hydraulic{width:30%;height:330px;float:left;line-height:25px;}
+#shuzhixinxi_hydraulic{width:60%;height:330px;float:left;}
+/*单机信息-故障信息界面*/
+#error_Message table td{background:rgb(0,0,0,0.1);color:red;}
+/*单机信息-机舱信息界面*/
+#zhuangtaixinxi_nacelle{width:30%;height:330px;float:left;line-height:25px;}
+#shuzhixinxi_nacelle{width:60%;height:330px;float:left;}
+#zhuangtaixinxi_nacelle span{width:150px;}
+#shuzhixinxi_nacelle span{width:100px;}
+#shuzhixinxi_nacelle input{width:100px;}
+/*单机信息-箱变界面*/
+#zhuangtaixinxi_xiangbian{width:30%;height:350px;float:left;line-height:25px;}
+#shuzhixinxi_xiangbian{width:60%;height:350px;float:left;}
+#shuzhixinxi_xiangbian input{width:100px;}
+#shuzhixinxi_xiangbian span{ width:100px;}
+
+/*温度信息汇总*/
+table.temperature{width:95%;float:left;}
+table.temperature thead th{background-color:#00B2C1;color:black;border-color:#898989}
+table.temperature tbody tr td{background-color:#dcdcdc;border-color:#898989;}
+
+/*确认密码窗口*/
+a.password{color:black;background:#7c7c7c;border-radius:3px;padding:5px 20px;text-decoration : none;font-weight:bold;height:50px;}
+/* 进度条 */
+div.jindutiao{width:120px;height:10px;display:inline-block;border:solid 1px white;border-radius:2px;}
+div.jindutiao_value{width:0;max-width:100%;height:10px; background: linear-gradient(to right, yellow , red);border-radius:1px;}
+/* 滚动条 */
+/* 滚动条整体的样式 */
+::-webkit-scrollbar{ width: 10px;height: 1px;}/*高宽分别对应横竖滚动条的尺寸*/   
+/* 滑块部分 */
+::-webkit-scrollbar-thumb{border-radius: 10px; -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2); background: #535353;}
+/* 轨道部分 */
+::-webkit-scrollbar-track{ -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);background: #004080;}

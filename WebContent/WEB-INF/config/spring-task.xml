@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+	   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd"
+	default-lazy-init="true">
+	 <bean id="quartzJob1" class="cn.fulong.tra.action.collection.CollectionAction"></bean>  
+ 	 <bean id="quartzJob2" class="cn.fulong.tra.action.collection.CollectionAction"></bean>  
+
+    <!-- 任务配置列表 -->  
+    <bean id="jobtask1" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <!-- 调用的类 -->  
+        <property name="targetObject">  
+            <ref bean="quartzJob1" />  
+        </property>  
+        <!-- 调用类中的方法 -->  
+        <property name="targetMethod">  
+            <value>collection</value>  
+        </property>  
+         <!-- 是否允许任务并发执行。当值为false时，表示必须等到前一个线程处理完毕后才再启一个新的线程 -->  
+         <property name="concurrent" value="false"/>  
+    </bean>   
+   	<bean id="jobtask2" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <!-- 调用的类 -->  
+        <property name="targetObject">  
+            <ref bean="quartzJob2" />  
+        </property>  
+        <!-- 调用类中的方法 -->  
+        <property name="targetMethod">  
+            <value>night</value>  
+        </property>  
+         <!-- 是否允许任务并发执行。当值为false时，表示必须等到前一个线程处理完毕后才再启一个新的线程 -->  
+         <property name="concurrent" value="false"/>  
+   	 </bean>   
+	<!-- job的配置结束 -->
+	<!-- 调度的配置开始 -->
+	<!-- <bean id="doTime" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="myJobDetail" />
+		</property>
+		<property name="cronExpression">
+			<value>*/2 * * * * ?</value>
+		</property>
+	</bean>
+	<bean id="doTime2" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail2">
+			<ref bean="myJobDetail2" />
+		</property>
+		<property name="cronExpression">
+			<value>*/2 * * * * ?</value>
+		</property>
+	</bean>
+	<bean id="doTime3" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail3">
+			<ref bean="myJobDetail3" />
+		</property>
+		<property name="cronExpression">
+			<value>*/2 * * * * ?</value>
+		</property>
+	</bean>
+	 -->
+	<bean id="cronTrigger1" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+        <property name="jobDetail" ref="jobtask1"></property>  
+        <!-- cron表达式 -->  
+        <property name="cronExpression">  
+            <value>*/2 * * * * ?</value>
+        </property>  
+    </bean>  
+    <bean id="cronTrigger2" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+        <property name="jobDetail" ref="jobtask2"></property>  
+        <!-- cron表达式 -->  
+        <property name="cronExpression">  
+            <value>0 0 0 * * ?</value>
+        </property>  
+    </bean>  
+	<!-- 调度的配置结束 -->
+	<!-- 启动触发器的配置开始 -->
+	<bean name="startQuertz" lazy-init="false" autowire="no"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronTrigger1" />
+				<ref bean="cronTrigger2" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 启动触发器的配置结束 -->
+
+</beans>

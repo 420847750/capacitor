@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webpage>
+	<code>frame</code>
+	<url>/frame/frame</url><!--公用头部-->
+	<datasets>
+		<dataset>
+			<name>ds1</name>
+			<!-- 1SQL检索，2存储过程，3Text文件，4Xml文件，5Rolap,6 solr,7json文件 -->
+			<type>1</type>
+			<!-- 1单条，2前几条，3分页显示，4全部 -->
+			<scope>4</scope>
+			<sql>
+			<![CDATA[
+			select t.name,t.id from scada_node t  order by order_no
+			]]>
+			</sql>
+		</dataset>
+		
+	</datasets>
+</webpage>

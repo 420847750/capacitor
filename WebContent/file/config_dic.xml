@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<WINFARM_SCADA_SYSCFG>
+	
+	<node name="FJ01"  orderNo="1"  slaveId="1"  port="502" ip="192.168.0.99"  fan_ip="192.168.1.1" group="1" line="1" point01File="cfads1_01" point02File="cfads1_02" point03File="cfads1_03" point04File="cfads1_04"  pitch="LUST" gearbox="南高齿" generator="湘电" converter="ABB" turbine_type="UP77" grid_power="1500"/>
+	<node name="FJ02"  orderNo="2"  slaveId="1"  port="503" ip="192.168.0.99"  fan_ip="192.168.1.1" group="1" line="1" point01File="cfads1_01" point02File="cfads1_02" point03File="cfads1_03" point04File="cfads1_04"  pitch="LUST" gearbox="南高齿" generator="湘电" converter="ABB" turbine_type="UP77" grid_power="1500"/>
+	
+</WINFARM_SCADA_SYSCFG>
+
